@@ -14,7 +14,7 @@ install_deb()
     version=${2:-zesty}
     package=$1
     echo "Installing $package"
-    INDEX="http://packages.ubuntu.com/en/$version/amd64/$package/download"
+    INDEX="https://packages.ubuntu.com/en/$version/amd64/$package/download"
     URL=$(curl "$INDEX" | grep -Eo "https?://.*$package.*\.deb" | head -1)
     local_deb_extract "$URL"
 }
